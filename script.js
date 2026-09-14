@@ -340,12 +340,10 @@ if (wishButton) {
             flame.classList.add("flame-out");
         }
 
-        // Tukar text button
         wishButton.textContent = "WISH SENT ✦";
-
 wishButton.disabled = true;
 
-// Enable NEXT button
+// Unlock NEXT
 const wishNextBtn = document.getElementById("wishNextBtn");
 
 if (wishNextBtn) {
