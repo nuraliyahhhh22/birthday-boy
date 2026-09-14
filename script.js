@@ -345,6 +345,7 @@ restartBtn.addEventListener("click", () => {
 
 const wishButton = document.getElementById("wishButton");
 const flame = document.querySelector(".flame");
+const cake = document.querySelector(".cake");
 
 if (wishButton) {
 
@@ -358,6 +359,11 @@ if (wishButton) {
         if (flame) {
             flame.classList.add("flame-out");
         }
+
+       // Glow cake selepas wish
+         if (cake) {
+             cake.classList.add("wish-made");
+         }
 
         wishButton.textContent = "WISH SENT ✦";
 wishButton.disabled = true;
@@ -445,6 +451,7 @@ document.addEventListener("mousemove", (event) => {
             #02050d 100%
         )
     `;
+    });
 
    /* =========================================
    SECRET MESSAGE
@@ -459,8 +466,7 @@ if (secretBtn && secretMessage) {
 
         secretMessage.classList.toggle("show");
 
-    });
-
+     });
 }
 
 });
