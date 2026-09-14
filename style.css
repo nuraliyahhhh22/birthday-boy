@@ -583,6 +583,22 @@ body {
 
 }
 
+.flame-out {
+    animation: flameOut 0.5s ease forwards !important;
+}
+
+@keyframes flameOut {
+    0% {
+        opacity: 1;
+        transform: rotate(-45deg) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(-45deg) scale(0);
+    }
+}
+
 .card-page h2 {
     font-family: "Cormorant Garamond", serif;
 
@@ -1610,4 +1626,39 @@ body {
     .secret-message.show {
         max-height: 110px;
     }
+}
+
+/* =========================================
+   WISH CONFETTI
+========================================= */
+
+.confetti {
+    position: fixed;
+
+    top: -10px;
+
+    width: 6px;
+    height: 12px;
+
+    background: #ffffff;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    animation: confettiFall 2.5s linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg);
+    }
+
 }
