@@ -1426,3 +1426,188 @@ body {
 
 }
 
+
+
+/* =========================================
+   EXTRA INTERACTIVE DETAILS
+========================================= */
+
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(150, 190, 230, 0.45);
+    box-shadow: 0 0 10px rgba(70, 130, 190, 0.35);
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+    from { transform: translateY(105vh); opacity: 0; }
+    15% { opacity: .55; }
+    80% { opacity: .35; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(170, 210, 245, .75);
+    box-shadow: 0 0 14px rgba(45, 115, 185, .55);
+    pointer-events: none;
+    z-index: 200;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+.cursor-web-puff {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(150, 195, 235, .45);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 199;
+    transform: translate(-50%, -50%);
+    animation: webPuff .65s ease-out forwards;
+}
+
+@keyframes webPuff {
+    from { opacity: .65; transform: translate(-50%, -50%) scale(.5); }
+    to { opacity: 0; transform: translate(-50%, -50%) scale(2.4); }
+}
+
+/* Make-a-wish interaction */
+.wish-btn {
+    margin-top: 18px;
+}
+
+.wish-result {
+    min-height: 22px;
+    margin-top: 12px;
+    color: #a9c7e5;
+    font-size: 11px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: .5s ease;
+}
+
+.wish-result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wish-next {
+    opacity: .35;
+    pointer-events: none;
+    transition: .4s ease;
+}
+
+.wish-next.ready {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cake.wish-made .flame {
+    animation: flameOut .45s ease forwards;
+}
+
+.cake.wish-made {
+    filter: drop-shadow(0 0 22px rgba(75, 135, 195, .3));
+}
+
+@keyframes flameOut {
+    0% { opacity: 1; transform: rotate(-45deg) scale(1); }
+    100% { opacity: 0; transform: rotate(-45deg) scale(.15) translateY(8px); }
+}
+
+/* Confetti */
+.confetti-piece {
+    position: fixed;
+    top: -15px;
+    width: 7px;
+    height: 11px;
+    pointer-events: none;
+    z-index: 180;
+    animation: confettiFall 1.8s cubic-bezier(.2,.7,.2,1) forwards;
+}
+
+@keyframes confettiFall {
+    0% { transform: translate3d(0,0,0) rotate(0deg); opacity: 1; }
+    100% { transform: translate3d(var(--drift), 105vh, 0) rotate(720deg); opacity: 0; }
+}
+
+/* Secret message */
+.secret-btn {
+    margin-top: 7px;
+    background: transparent;
+    border: none;
+    color: #637f9e;
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.secret-btn:hover {
+    color: #c4d9ee;
+    transform: translateY(-1px);
+}
+
+.secret-message {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    padding: 0 14px;
+    width: 100%;
+    color: #b8cee4;
+    transition: .7s ease;
+}
+
+.secret-message.show {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 8px;
+    padding: 10px 14px;
+}
+
+.secret-message span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+}
+
+.secret-message p {
+    margin-top: 4px;
+    color: #7189a3;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .cursor-dot,
+    .cursor-web-puff {
+        display: none;
+    }
+
+    .particle:nth-child(n+16) {
+        display: none;
+    }
+
+    .secret-message.show {
+        max-height: 110px;
+    }
+}
