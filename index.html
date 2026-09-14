@@ -25,6 +25,12 @@
     <div class="web web-2" aria-hidden="true"></div>
     <div class="web web-3" aria-hidden="true"></div>
 
+    <!-- Floating background particles -->
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <!-- Spider web cursor trail -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
     <!-- Music -->
     <audio id="birthdayMusic" loop>
         <source src="birthday.mp3" type="audio/mpeg">
@@ -112,7 +118,14 @@
                     make a little wish 🤍
                 </p>
 
-                <button class="main-btn next-btn">
+                <button class="main-btn wish-btn" id="wishBtn">
+                    MAKE A WISH
+                    <span>✦</span>
+                </button>
+
+                <p class="wish-result" id="wishResult"></p>
+
+                <button class="main-btn next-btn wish-next" id="wishNextBtn">
                     NEXT
                     <span>→</span>
                 </button>
@@ -151,6 +164,13 @@
     <p class="photo-caption">
         wish: bedayyy myy favv boyy 🤍
     </p>
+
+    <button class="secret-btn" id="secretBtn">🕷️ psst... click me</button>
+
+    <div class="secret-message" id="secretMessage">
+        <span>you found the little secret 🤍</span>
+        <p>some people are just a little more special than others.</p>
+    </div>
 
     <button class="main-btn next-btn">
         NEXT
