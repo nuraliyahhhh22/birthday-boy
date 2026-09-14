@@ -1,0 +1,1353 @@
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #030303;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(90, 0, 0, 0.22),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #030303,
+            #090909 50%,
+            #020202
+        );
+
+    z-index: -3;
+}
+
+
+/* Red glow */
+
+.background::after {
+    content: "";
+
+    position: absolute;
+    width: 350px;
+    height: 350px;
+
+    background: rgba(130, 0, 0, 0.16);
+
+    filter: blur(100px);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =========================================
+   SPIDER WEB DECORATION
+========================================= */
+
+.web {
+    position: fixed;
+
+    color: rgba(255, 255, 255, 0.08);
+
+    font-size: 180px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.web-1 {
+    top: -80px;
+    left: -50px;
+}
+
+.web-2 {
+    bottom: -80px;
+    right: -50px;
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+.music-btn {
+    position: fixed;
+
+    top: 25px;
+    right: 25px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: rgba(10,10,10,0.75);
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 100;
+
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    background: #8b0000;
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   CARD CONTAINER
+========================================= */
+
+.card-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 15px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.birthday-card {
+    position: relative;
+
+    width: min(440px, 100%);
+
+    min-height: 650px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,20,20,0.98),
+            rgba(5,5,5,0.98)
+        );
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.8),
+        0 0 50px rgba(90,0,0,0.08);
+
+    overflow: hidden;
+}
+
+
+/* Red side line */
+
+.birthday-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 3px;
+
+    background: linear-gradient(
+        transparent,
+        #850000,
+        transparent
+    );
+}
+
+
+/* =========================================
+   CARD PAGE
+========================================= */
+
+.card-page {
+    display: none;
+
+    min-height: 650px;
+
+    padding: 55px 40px 40px;
+
+    text-align: center;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.card-page.active {
+    display: flex;
+
+    animation: pageIn 0.7s ease;
+}
+
+@keyframes pageIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================
+   PAGE 1
+========================================= */
+
+.spider-symbol {
+    font-size: 42px;
+
+    margin-bottom: 25px;
+
+    filter:
+        grayscale(1)
+        brightness(1.8);
+
+    animation: floatSpider 3s ease-in-out infinite;
+}
+
+@keyframes floatSpider {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+.small-text,
+.page-label {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #777;
+
+    text-transform: uppercase;
+}
+
+.card-page h1 {
+    margin-top: 18px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 13vw, 70px);
+
+    line-height: 0.85;
+
+    letter-spacing: 3px;
+
+    font-weight: 500;
+}
+
+.line {
+    width: 60px;
+    height: 1px;
+
+    background: #8b0000;
+
+    margin: 30px auto;
+}
+
+.to-text,
+.from-text {
+    font-size: 12px;
+
+    color: #888;
+
+    letter-spacing: 1px;
+}
+
+.to-text span {
+    color: #ddd;
+}
+
+.date {
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    color: #8d8d8d;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.main-btn {
+    margin-top: auto;
+
+    min-width: 175px;
+
+    padding: 13px 20px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.main-btn span {
+    margin-left: 12px;
+
+    color: #aaa;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: #700000;
+
+    border-color: #700000;
+
+    box-shadow: 0 0 25px rgba(130,0,0,0.25);
+}
+
+.main-btn:hover span {
+    margin-left: 18px;
+}
+
+
+/* =========================================
+   PAGE 2 — CAKE
+========================================= */
+
+.cake-area {
+    height: 330px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+}
+
+.cake {
+    position: relative;
+
+    width: 190px;
+
+    height: 160px;
+
+    margin-top: 40px;
+}
+
+.cake-body {
+    position: absolute;
+
+    width: 170px;
+    height: 80px;
+
+    left: 10px;
+    bottom: 25px;
+
+    background:
+        linear-gradient(
+            #500000,
+            #260000
+        );
+
+    border-radius: 10px 10px 20px 20px;
+
+    border: 1px solid #771010;
+}
+
+.cake-top {
+    position: absolute;
+
+    width: 170px;
+    height: 42px;
+
+    left: 10px;
+    top: 55px;
+
+    background: #1a1a1a;
+
+    border-radius: 50%;
+
+    border: 1px solid #751010;
+
+    z-index: 2;
+}
+
+.icing {
+    position: absolute;
+
+    width: 150px;
+    height: 25px;
+
+    left: 20px;
+    top: 65px;
+
+    background: #111;
+
+    border-radius: 50%;
+
+    z-index: 3;
+}
+
+.cake-line {
+    height: 1px;
+
+    width: 110px;
+
+    background: rgba(255,255,255,0.08);
+
+    margin: 22px auto 0;
+}
+
+.cake-line + .cake-line {
+    margin-top: 14px;
+}
+
+.cake-plate {
+    position: absolute;
+
+    width: 215px;
+    height: 15px;
+
+    left: -12px;
+    bottom: 13px;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    border-radius: 50%;
+}
+
+.candle {
+    position: absolute;
+
+    width: 10px;
+    height: 60px;
+
+    background: #ddd;
+
+    left: 90px;
+    top: 5px;
+
+    z-index: 5;
+
+    border-radius: 3px;
+}
+
+.flame {
+    position: absolute;
+
+    width: 14px;
+    height: 20px;
+
+    background: #ddd;
+
+    border-radius: 50% 50% 50% 0;
+
+    transform: rotate(-45deg);
+
+    left: -2px;
+    top: -17px;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.7);
+
+    animation: flame 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes flame {
+
+    from {
+        transform: rotate(-45deg) scale(0.9);
+    }
+
+    to {
+        transform: rotate(-45deg) scale(1.1);
+    }
+
+}
+
+.card-page h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 34px;
+
+    font-weight: 500;
+}
+
+.soft-text {
+    margin-top: 10px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   PAGE 3 — PHOTO
+========================================= */
+
+.photo-frame {
+    position: relative;
+
+    width: 270px;
+
+    background: #f2f2f2;
+
+    padding: 12px 12px 50px;
+
+    margin-top: 55px;
+
+    transform: rotate(-2deg);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+
+    transition: 0.5s;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.photo-frame img {
+    display: block;
+
+    width: 100%;
+
+    height: 310px;
+
+    object-fit: cover;
+
+    background: #111;
+}
+
+.photo-tape {
+    position: absolute;
+
+    width: 85px;
+    height: 25px;
+
+    background: rgba(100,100,100,0.45);
+
+    top: -13px;
+    left: 92px;
+
+    transform: rotate(3deg);
+}
+
+.photo-caption {
+    margin-top: 30px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    color: #ddd;
+}
+
+
+/* =========================================
+   PAGE 4 — WISH
+========================================= */
+
+.wish-box {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 50px;
+
+    padding: 30px 15px;
+
+    text-align: left;
+}
+
+.quote-mark {
+    font-family: Georgia, serif;
+
+    font-size: 80px;
+
+    line-height: 0.5;
+
+    color: #600000;
+
+    margin-bottom: 20px;
+}
+
+#wishText {
+    color: #ddd;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    min-height: 330px;
+}
+
+
+/* =========================================
+   FINAL LETTER — SPIDER-MAN ENVELOPE
+========================================= */
+
+#page5 {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Dark overlay bila surat dibuka */
+
+#page5::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #000;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 1.5s ease;
+
+    z-index: 0;
+}
+
+#page5.letter-opened::after {
+    opacity: 0.35;
+}
+
+
+/* Title */
+
+.last-title {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 38px;
+
+    font-size: 27px !important;
+
+    line-height: 1.25;
+
+    font-family: "Cormorant Garamond", serif;
+}
+
+
+/* =========================================
+   ENVELOPE
+========================================= */
+
+.final-envelope {
+    position: relative;
+
+    width: 280px;
+    height: 185px;
+
+    margin-top: 75px;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+    z-index: 5;
+
+    transition: 1s ease;
+}
+
+
+/* =========================================
+   ENVELOPE BODY
+========================================= */
+
+.envelope-body {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #080808
+        );
+
+    border: 1px solid #3d3d3d;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.8);
+
+    z-index: 3;
+}
+
+
+/* diagonal envelope lines */
+
+.envelope-body::before,
+.envelope-body::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 190px;
+
+    background: rgba(255,255,255,0.08);
+
+    top: 10px;
+}
+
+.envelope-body::before {
+    left: 45px;
+
+    transform: rotate(-57deg);
+}
+
+.envelope-body::after {
+    right: 45px;
+
+    transform: rotate(57deg);
+}
+
+
+/* =========================================
+   FLAP
+========================================= */
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+
+    border-top: 105px solid #222;
+
+    transform-origin: top center;
+
+    z-index: 7;
+
+    transition:
+        transform 1s cubic-bezier(.4,0,.2,1);
+
+    filter:
+        drop-shadow(
+            0 5px 5px rgba(0,0,0,0.5)
+        );
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.final-letter {
+
+    position: absolute;
+
+    width: 245px;
+    height: 205px;
+
+    left: 17px;
+
+    bottom: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1f1ed,
+            #dcdcd7
+        );
+
+    color: #111;
+
+    z-index: 2;
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1),
+        box-shadow 1s ease;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.4);
+}
+
+
+/* paper texture */
+
+.final-letter::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 25px,
+            rgba(0,0,0,0.04) 26px
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   LETTER CONTENT
+========================================= */
+
+.letter-inner {
+
+    padding: 22px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    text-align: left;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.letter-to {
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-bottom: 18px;
+}
+
+
+.letter-message {
+
+    min-height: 80px;
+
+    color: #151515;
+}
+
+
+.letter-signature {
+
+    margin-top: 20px;
+
+    text-align: right;
+
+    font-size: 14px;
+
+    opacity: 0;
+
+    transition: 1s ease;
+}
+
+
+/* =========================================
+   SPIDER SEAL
+========================================= */
+
+.spider-seal {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #090909;
+
+    border: 1px solid #555;
+
+    font-size: 21px;
+
+    z-index: 10;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.08);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+
+/* =========================================
+   OPEN ANIMATION
+========================================= */
+
+.final-envelope.open .envelope-flap {
+
+    transform:
+        rotateX(180deg);
+
+    z-index: 1;
+}
+
+
+.final-envelope.open .final-letter {
+
+    transform:
+        translateY(-135px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.8);
+
+    z-index: 8;
+}
+
+
+.final-envelope.open .spider-seal {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.5);
+}
+
+
+/* =========================================
+   HINT
+========================================= */
+
+.envelope-hint {
+
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 20px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    animation:
+        hintPulse 1.8s infinite;
+}
+
+@keyframes hintPulse {
+
+    0%,
+    100% {
+        opacity: .35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   RESTART
+========================================= */
+
+.restart-btn {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: none;
+
+    margin-top: 18px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #777;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.restart-btn:hover {
+
+    color: white;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .final-envelope {
+
+        transform: scale(.88);
+
+        margin-top: 65px;
+    }
+
+    .final-envelope.open {
+
+        transform:
+            scale(.88)
+            translateY(15px);
+    }
+
+    .last-title {
+
+        font-size: 25px !important;
+    }
+
+}
+
+/* =========================================
+   BOTTOM TEXT
+========================================= */
+
+.bottom-web-text {
+    position: fixed;
+
+    bottom: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #333;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .card-container {
+        padding: 15px;
+    }
+
+    .birthday-card {
+        min-height: 620px;
+    }
+
+    .card-page {
+        min-height: 620px;
+
+        padding: 45px 25px 30px;
+    }
+
+    .card-page h1 {
+        font-size: 54px;
+    }
+
+    .photo-frame {
+        width: 240px;
+    }
+
+    .photo-frame img {
+        height: 275px;
+    }
+
+    #wishText {
+        font-size: 17px;
+    }
+
+    .envelope {
+        transform: scale(0.9);
+    }
+
+    .music-btn {
+        top: 15px;
+        right: 15px;
+    }
+
+}
+
+/* =========================================
+   THREE PHOTO POLAROID
+========================================= */
+
+.three-photos {
+    position: relative;
+
+    width: 310px;
+    height: 365px;
+
+    margin-top: 35px;
+}
+
+
+/* Each photo */
+
+.polaroid {
+    position: absolute;
+
+    width: 155px;
+
+    background: #eeeeea;
+
+    padding: 8px 8px 35px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.7);
+
+    transition: 0.5s ease;
+
+    cursor: pointer;
+}
+
+
+/* Image */
+
+.polaroid img {
+    display: block;
+
+    width: 100%;
+    height: 175px;
+
+    object-fit: cover;
+
+    background: #111;
+}
+
+
+/* Caption */
+
+.polaroid span {
+    position: absolute;
+
+    bottom: 9px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #222;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PHOTO POSITIONS
+========================================= */
+
+.photo-one {
+    left: 5px;
+    top: 50px;
+
+    transform: rotate(-8deg);
+
+    z-index: 1;
+}
+
+.photo-two {
+    left: 78px;
+    top: 5px;
+
+    transform: rotate(3deg);
+
+    z-index: 3;
+}
+
+.photo-three {
+    right: 2px;
+    top: 65px;
+
+    transform: rotate(8deg);
+
+    z-index: 2;
+}
+
+
+/* Hover */
+
+.polaroid:hover {
+    z-index: 10;
+
+    transform:
+        rotate(0deg)
+        scale(1.08);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.9),
+        0 0 20px rgba(120,0,0,0.25);
+}
+
+
+/* =========================================
+   LITTLE RED WEB EFFECT
+========================================= */
+
+.three-photos::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: -10px;
+    right: 15px;
+
+    color: #6d0000;
+
+    font-size: 22px;
+
+    z-index: 20;
+
+    animation: photoSpark 2s infinite;
+}
+
+@keyframes photoSpark {
+
+    0%,100% {
+        opacity: .3;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .three-photos {
+        width: 290px;
+        height: 350px;
+
+        transform: scale(.9);
+    }
+
+    .polaroid {
+        width: 145px;
+    }
+
+    .polaroid img {
+        height: 165px;
+    }
+
+}
+
