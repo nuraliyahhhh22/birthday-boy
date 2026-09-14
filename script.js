@@ -81,6 +81,26 @@ nextButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
+        // Page 2 kena buat wish dulu
+        if (currentPage === 1 && !wishMade) {
+
+            const wishButton =
+                document.getElementById("wishButton");
+
+            if (wishButton) {
+
+                wishButton.classList.add("shake");
+
+                setTimeout(() => {
+                    wishButton.classList.remove("shake");
+                }, 500);
+
+            }
+
+            return;
+        }
+
+        // Go to next page
         if (currentPage < pages.length - 1) {
             showPage(currentPage + 1);
         }
@@ -88,7 +108,6 @@ nextButtons.forEach(button => {
     });
 
 });
-
 /* =========================================
    TYPING EFFECT
 ========================================= */
@@ -352,25 +371,6 @@ if (wishNextBtn) {
 
 // Confetti
 createConfetti();
-
-    });
-
-}
-
-/* =========================================
-   ENABLE NEXT AFTER WISH
-========================================= */
-
-const wishNextBtn =
-    document.getElementById("wishNextBtn");
-
-if (wishNextBtn) {
-
-    wishNextBtn.addEventListener("click", () => {
-
-        if (!wishMade) return;
-
-        showPage(currentPage + 1);
 
     });
 
