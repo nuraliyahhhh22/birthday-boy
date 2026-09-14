@@ -446,4 +446,21 @@ document.addEventListener("mousemove", (event) => {
         )
     `;
 
+   /* =========================================
+   SECRET MESSAGE
+========================================= */
+
+const secretBtn = document.getElementById("secretBtn");
+const secretMessage = document.getElementById("secretMessage");
+
+if (secretBtn && secretMessage) {
+
+    secretBtn.addEventListener("click", () => {
+
+        secretMessage.classList.toggle("show");
+
+    });
+
+}
+
 });
