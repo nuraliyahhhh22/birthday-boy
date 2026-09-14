@@ -16,7 +16,7 @@ body {
 }
 
 body {
-    background: #030303;
+    background: #020713;
     color: #ffffff;
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
@@ -33,15 +33,20 @@ body {
 
     background:
         radial-gradient(
-            circle at 50% 50%,
-            rgba(90, 0, 0, 0.22),
-            transparent 45%
+            circle at 50% 45%,
+            rgba(15, 55, 105, 0.32),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(120, 0, 20, 0.16),
+            transparent 32%
         ),
         linear-gradient(
             135deg,
-            #030303,
-            #090909 50%,
-            #020202
+            #020713 0%,
+            #061329 45%,
+            #02050d 100%
         );
 
     z-index: -3;
@@ -57,7 +62,7 @@ body {
     width: 350px;
     height: 350px;
 
-    background: rgba(130, 0, 0, 0.16);
+    background: rgba(18, 63, 125, 0.18);
 
     filter: blur(100px);
 
@@ -70,29 +75,77 @@ body {
 
 /* =========================================
    SPIDER WEB DECORATION
+   Navy-blue glowing web
 ========================================= */
 
 .web {
     position: fixed;
-
-    color: rgba(255, 255, 255, 0.08);
-
-    font-size: 180px;
-
+    width: 340px;
+    height: 340px;
     pointer-events: none;
-
     z-index: -1;
+    opacity: 0.62;
+
+    background:
+        repeating-radial-gradient(
+            circle at center,
+            transparent 0 28px,
+            rgba(145, 190, 235, 0.20) 29px 30px,
+            transparent 31px 54px
+        ),
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(145, 190, 235, 0.18) 0deg 1deg,
+            transparent 1deg 30deg
+        );
+
+    filter: drop-shadow(0 0 7px rgba(35, 95, 160, 0.22));
+}
+
+.web::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0 3px,
+            rgba(120, 170, 220, 0.25) 4px 5px,
+            transparent 6px
+        );
 }
 
 .web-1 {
-    top: -80px;
-    left: -50px;
+    top: -120px;
+    left: -120px;
+    animation: webPulse 5s ease-in-out infinite;
 }
 
 .web-2 {
-    bottom: -80px;
-    right: -50px;
+    bottom: -120px;
+    right: -120px;
     transform: rotate(180deg);
+    animation: webPulse 6s ease-in-out infinite reverse;
+}
+
+.web-3 {
+    top: 38%;
+    right: -235px;
+    width: 280px;
+    height: 280px;
+    opacity: 0.28;
+    transform: rotate(18deg);
+}
+
+@keyframes webPulse {
+    0%, 100% {
+        opacity: 0.42;
+    }
+
+    50% {
+        opacity: 0.72;
+    }
 }
 
 
@@ -113,7 +166,7 @@ body {
 
     border: 1px solid rgba(255,255,255,0.25);
 
-    background: rgba(10,10,10,0.75);
+    background: rgba(4, 18, 38, 0.86);
 
     color: white;
 
@@ -125,7 +178,7 @@ body {
 }
 
 .music-btn:hover {
-    background: #8b0000;
+    background: #123e70;
     transform: scale(1.08);
 }
 
@@ -161,15 +214,16 @@ body {
     background:
         linear-gradient(
             145deg,
-            rgba(20,20,20,0.98),
-            rgba(5,5,5,0.98)
+            rgba(8, 27, 52, 0.98),
+            rgba(3, 8, 17, 0.99) 58%,
+            rgba(2, 4, 9, 0.99)
         );
 
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(90, 145, 200, 0.20);
 
     box-shadow:
         0 30px 80px rgba(0,0,0,0.8),
-        0 0 50px rgba(90,0,0,0.08);
+        0 0 50px rgba(20,70,125,0.16);
 
     overflow: hidden;
 }
@@ -292,7 +346,7 @@ body {
     width: 60px;
     height: 1px;
 
-    background: #8b0000;
+    background: #123e70;
 
     margin: 30px auto;
 }
@@ -358,11 +412,11 @@ body {
 }
 
 .main-btn:hover {
-    background: #700000;
+    background: #123e70;
 
-    border-color: #700000;
+    border-color: #1b568f;
 
-    box-shadow: 0 0 25px rgba(130,0,0,0.25);
+    box-shadow: 0 0 25px rgba(20,85,145,0.28);
 }
 
 .main-btn:hover span {
@@ -443,7 +497,7 @@ body {
     left: 20px;
     top: 65px;
 
-    background: #111;
+    background: #071426;
 
     border-radius: 50%;
 
@@ -473,7 +527,7 @@ body {
     left: -12px;
     bottom: 13px;
 
-    background: #111;
+    background: #071426;
 
     border: 1px solid #333;
 
@@ -583,7 +637,7 @@ body {
 
     object-fit: cover;
 
-    background: #111;
+    background: #071426;
 }
 
 .photo-tape {
@@ -738,11 +792,12 @@ body {
     background:
         linear-gradient(
             145deg,
-            #171717,
-            #080808
+            #102f52,
+            #071426 60%,
+            #040a13
         );
 
-    border: 1px solid #3d3d3d;
+    border: 1px solid #24496f;
 
     box-shadow:
         0 25px 60px rgba(0,0,0,0.8);
@@ -798,7 +853,7 @@ body {
     border-left: 140px solid transparent;
     border-right: 140px solid transparent;
 
-    border-top: 105px solid #222;
+    border-top: 105px solid #123454;
 
     transform-origin: top center;
 
@@ -952,9 +1007,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: #090909;
+    background: #071426;
 
-    border: 1px solid #555;
+    border: 1px solid #4778a6;
 
     font-size: 21px;
 
@@ -1135,6 +1190,26 @@ body {
 
 @media (max-width: 480px) {
 
+    .web {
+        width: 250px;
+        height: 250px;
+        opacity: 0.50;
+    }
+
+    .web-1 {
+        top: -90px;
+        left: -90px;
+    }
+
+    .web-2 {
+        bottom: -90px;
+        right: -90px;
+    }
+
+    .web-3 {
+        display: none;
+    }
+
     .card-container {
         padding: 15px;
     }
@@ -1220,7 +1295,7 @@ body {
 
     object-fit: cover;
 
-    background: #111;
+    background: #071426;
 }
 
 
