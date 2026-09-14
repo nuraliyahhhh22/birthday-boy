@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +16,10 @@
 
 <body>
 
-    <!-- Background -->
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
     <div class="background"></div>
 
     <!-- Spider Web -->
@@ -31,12 +33,15 @@
     <!-- Spider web cursor trail -->
     <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
-    <!-- Music -->
+
+    <!-- =========================
+         MUSIC
+    ========================== -->
+
     <audio id="birthdayMusic" loop>
         <source src="birthday.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Music Button -->
     <button class="music-btn" id="musicBtn">
         ♫
     </button>
@@ -68,10 +73,17 @@
 
                 <div class="line"></div>
 
-                <p class="to-text">to: <span>myfavperson</span></p>
-                <p class="from-text">from: maisarakiutt</p>
+                <p class="to-text">
+                    to: <span>myfavperson</span>
+                </p>
 
-                <p class="date">18 / 9</p>
+                <p class="from-text">
+                    from: maisarakiutt
+                </p>
+
+                <p class="date">
+                    18 / 9
+                </p>
 
                 <button class="main-btn next-btn">
                     OPEN CARD
@@ -81,18 +93,20 @@
             </section>
 
 
-
             <!-- =========================
-                 PAGE 2 — CAKE
+                 PAGE 2 — CAKE / MAKE A WISH
             ========================== -->
 
             <section class="card-page" id="page2">
 
-                <p class="page-label">01 — MAKE A WISH</p>
+                <p class="page-label">
+                    01 — MAKE A WISH
+                </p>
 
                 <div class="cake-area">
 
                     <div class="cake">
+
                         <div class="candle">
                             <div class="flame"></div>
                         </div>
@@ -107,23 +121,28 @@
                         </div>
 
                         <div class="cake-plate"></div>
+
                     </div>
 
                 </div>
 
-                <h2>make a wish...</h2>
+                <h2>
+                    make a wish...
+                </h2>
 
-<p class="soft-text">
-    close your eyes,<br>
-    make a little wish 🤍
-</p>
+                <p class="soft-text">
+                    close your eyes,<br>
+                    make a little wish 🤍
+                </p>
 
-<button class="main-btn wish-button" id="wishButton">
-    MAKE A WISH ✦
-</button>
+                <!-- ONE MAKE A WISH BUTTON ONLY -->
+                <button class="main-btn wish-button" id="wishButton">
+                    MAKE A WISH ✦
+                </button>
 
                 <p class="wish-result" id="wishResult"></p>
 
+                <!-- NEXT IS LOCKED UNTIL WISH IS MADE -->
                 <button class="main-btn next-btn wish-next" id="wishNextBtn">
                     NEXT
                     <span>→</span>
@@ -132,51 +151,56 @@
             </section>
 
 
+            <!-- =========================
+                 PAGE 3 — THREE PHOTOS
+            ========================== -->
 
-           <!-- =========================
-     PAGE 3 — THREE PHOTOS
-========================= -->
+            <section class="card-page" id="page3">
 
-<section class="card-page" id="page3">
+                <p class="page-label">
+                    02 — MY FAV BOY
+                </p>
 
-    <p class="page-label">02 — MY FAV BOY</p>
+                <div class="three-photos">
 
-    <div class="three-photos">
+                    <div class="polaroid photo-one">
+                        <img src="img1.jpeg" alt="Photo 1">
+                        <span>fav 🤍</span>
+                    </div>
 
-        <div class="polaroid photo-one">
-            <img src="img1.jpeg" alt="Photo 1">
-            <span>fav 🤍</span>
-        </div>
+                    <div class="polaroid photo-two">
+                        <img src="img2.jpeg" alt="Photo 2">
+                        <span>my boyy</span>
+                    </div>
 
-        <div class="polaroid photo-two">
-            <img src="img2.jpeg" alt="Photo 2">
-            <span>my boyy</span>
-        </div>
+                    <div class="polaroid photo-three">
+                        <img src="img3.jpeg" alt="Photo 3">
+                        <span>18/9 🕷️</span>
+                    </div>
 
-        <div class="polaroid photo-three">
-            <img src="img3.jpeg" alt="Photo 3">
-            <span>18/9 🕷️</span>
-        </div>
+                </div>
 
-    </div>
+                <p class="photo-caption">
+                    wish: bedayyy myy favv boyy 🤍
+                </p>
 
-    <p class="photo-caption">
-        wish: bedayyy myy favv boyy 🤍
-    </p>
+                <button class="secret-btn" id="secretBtn">
+                    🕷️ psst... click me
+                </button>
 
-    <button class="secret-btn" id="secretBtn">🕷️ psst... click me</button>
+                <div class="secret-message" id="secretMessage">
+                    <span>you found the little secret 🤍</span>
+                    <p>
+                        some people are just a little more special than others.
+                    </p>
+                </div>
 
-    <div class="secret-message" id="secretMessage">
-        <span>you found the little secret 🤍</span>
-        <p>some people are just a little more special than others.</p>
-    </div>
+                <button class="main-btn next-btn">
+                    NEXT
+                    <span>→</span>
+                </button>
 
-    <button class="main-btn next-btn">
-    NEXT
-    <span>→</span>
-</button>
-
-</section>
+            </section>
 
 
             <!-- =========================
@@ -185,11 +209,15 @@
 
             <section class="card-page" id="page4">
 
-                <p class="page-label">03 — A LITTLE WISH</p>
+                <p class="page-label">
+                    03 — A LITTLE WISH
+                </p>
 
                 <div class="wish-box">
 
-                    <div class="quote-mark">“</div>
+                    <div class="quote-mark">
+                        “
+                    </div>
 
                     <p id="wishText"></p>
 
@@ -203,57 +231,60 @@
             </section>
 
 
-
             <!-- =========================
-     PAGE 5 — FINAL LETTER
-========================= -->
+                 PAGE 5 — FINAL LETTER
+            ========================== -->
 
-<section class="card-page" id="page5">
+            <section class="card-page" id="page5">
 
-    <p class="page-label">04 — ONE LAST MESSAGE</p>
+                <p class="page-label">
+                    04 — ONE LAST MESSAGE
+                </p>
 
-    <h2 class="last-title">
-        there's one last thing<br>
-        i want you to read...
-    </h2>
+                <h2 class="last-title">
+                    there's one last thing<br>
+                    i want you to read...
+                </h2>
 
-    <div class="final-envelope" id="envelope">
+                <div class="final-envelope" id="envelope">
 
-        <!-- LETTER -->
-        <div class="final-letter">
+                    <!-- LETTER -->
+                    <div class="final-letter">
 
-            <div class="letter-inner">
+                        <div class="letter-inner">
 
-                <p class="letter-to">for my fav person,</p>
+                            <p class="letter-to">
+                                for my fav person,
+                            </p>
 
-                <p class="letter-message" id="letterMessage"></p>
+                            <p class="letter-message" id="letterMessage"></p>
 
-                <p class="letter-signature" id="letterSignature"></p>
+                            <p class="letter-signature" id="letterSignature"></p>
 
-            </div>
+                        </div>
 
-        </div>
+                    </div>
 
-        <!-- ENVELOPE -->
-        <div class="envelope-body"></div>
+                    <!-- ENVELOPE -->
+                    <div class="envelope-body"></div>
 
-        <div class="envelope-flap"></div>
+                    <div class="envelope-flap"></div>
 
-        <div class="spider-seal">
-            🕷️
-        </div>
+                    <div class="spider-seal">
+                        🕷️
+                    </div>
 
-    </div>
+                </div>
 
-    <p class="envelope-hint" id="clickText">
-        click the envelope
-    </p>
+                <p class="envelope-hint" id="clickText">
+                    click the envelope
+                </p>
 
-    <button class="restart-btn" id="restartBtn">
-        ↻ read again
-    </button>
+                <button class="restart-btn" id="restartBtn">
+                    ↻ read again
+                </button>
 
-</section>
+            </section>
 
         </div>
 
@@ -261,6 +292,7 @@
 
 
     <!-- Bottom text -->
+
     <div class="bottom-web-text">
         made with a little bit of love 🕷️
     </div>
@@ -270,4 +302,3 @@
 
 </body>
 </html>
-
