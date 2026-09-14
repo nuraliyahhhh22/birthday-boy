@@ -343,11 +343,17 @@ if (wishButton) {
         // Tukar text button
         wishButton.textContent = "WISH SENT ✦";
 
-        // Disable button
-        wishButton.disabled = true;
+wishButton.disabled = true;
 
-        // Confetti
-        createConfetti();
+// Enable NEXT button
+const wishNextBtn = document.getElementById("wishNextBtn");
+
+if (wishNextBtn) {
+    wishNextBtn.classList.add("ready");
+}
+
+// Confetti
+createConfetti();
 
     });
 
