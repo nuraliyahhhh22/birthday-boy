@@ -315,30 +315,6 @@ restartBtn.addEventListener("click", () => {
 
 });
 
-
-/* =========================================
-   READ AGAIN
-========================================= */
-
-restartBtn.addEventListener("click", () => {
-
-    envelope.classList.remove("open");
-
-    restartBtn.style.display = "none";
-
-    clickText.textContent = "click the letter";
-
-    typingStarted = false;
-
-    showPage(0);
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
 /* =========================================
    MAKE A WISH
 ========================================= */
