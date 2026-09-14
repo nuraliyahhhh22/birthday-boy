@@ -77,32 +77,9 @@ function showPage(index) {
    NEXT BUTTON
 ========================================= */
 
-/* =========================================
-   NEXT BUTTON
-========================================= */
-
 nextButtons.forEach(button => {
 
     button.addEventListener("click", () => {
-
-        // Page 2 kena buat wish dulu
-        if (currentPage === 1 && !wishMade) {
-
-            const wishButton =
-                document.getElementById("wishButton");
-
-            if (wishButton) {
-
-                wishButton.classList.add("shake");
-
-                setTimeout(() => {
-                    wishButton.classList.remove("shake");
-                }, 500);
-
-            }
-
-            return;
-        }
 
         if (currentPage < pages.length - 1) {
             showPage(currentPage + 1);
@@ -111,7 +88,6 @@ nextButtons.forEach(button => {
     });
 
 });
-
 
 /* =========================================
    TYPING EFFECT
@@ -377,6 +353,25 @@ if (wishButton) {
 
 }
 
+/* =========================================
+   ENABLE NEXT AFTER WISH
+========================================= */
+
+const wishNextBtn =
+    document.getElementById("wishNextBtn");
+
+if (wishNextBtn) {
+
+    wishNextBtn.addEventListener("click", () => {
+
+        if (!wishMade) return;
+
+        showPage(currentPage + 1);
+
+    });
+
+}
+
 
 /* =========================================
    CONFETTI
@@ -409,76 +404,6 @@ function createConfetti() {
 
 }
 
-/* =========================================
-   MAKE A WISH
-========================================= */
-
-const wishButton =
-    document.getElementById("wishButton");
-
-const flame =
-    document.querySelector(".flame");
-
-
-if (wishButton) {
-
-    wishButton.addEventListener("click", () => {
-
-        if (wishMade) return;
-
-        wishMade = true;
-
-        // Padam candle
-        if (flame) {
-            flame.classList.add("flame-out");
-        }
-
-        // Tukar button
-        wishButton.textContent = "WISH SENT ✦";
-
-        wishButton.disabled = true;
-
-        // Confetti
-        createConfetti();
-
-    });
-
-}
-
-
-/* =========================================
-   CONFETTI
-========================================= */
-
-function createConfetti() {
-
-    for (let i = 0; i < 35; i++) {
-
-        const confetti =
-            document.createElement("span");
-
-        confetti.className = "confetti";
-
-        confetti.style.left =
-            Math.random() * 100 + "%";
-
-        confetti.style.animationDelay =
-            Math.random() * 0.5 + "s";
-
-        confetti.style.transform =
-            `rotate(${Math.random() * 360}deg)`;
-
-        document.body.appendChild(confetti);
-
-        setTimeout(() => {
-
-            confetti.remove();
-
-        }, 2500);
-
-    }
-
-}
 
 /* =========================================
    LITTLE SPIDER WEB EFFECT — NAVY
