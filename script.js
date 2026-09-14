@@ -322,7 +322,7 @@ restartBtn.addEventListener("click", () => {
 
 
 /* =========================================
-   LITTLE SPIDER WEB EFFECT
+   LITTLE SPIDER WEB EFFECT — NAVY
 ========================================= */
 
 document.addEventListener("mousemove", (event) => {
@@ -332,19 +332,30 @@ document.addEventListener("mousemove", (event) => {
 
     const glow = document.querySelector(".background");
 
-    glow.style.background =
-        `
+    if (!glow) return;
+
+    glow.style.background = `
         radial-gradient(
             circle at ${x}px ${y}px,
-            rgba(100,0,0,0.12),
-            transparent 35%
+            rgba(28, 91, 150, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(15, 55, 105, 0.32),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(120, 0, 20, 0.16),
+            transparent 32%
         ),
         linear-gradient(
             135deg,
-            #030303,
-            #090909 50%,
-            #020202
+            #020713 0%,
+            #061329 45%,
+            #02050d 100%
         )
-        `;
+    `;
 
 });
