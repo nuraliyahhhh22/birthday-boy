@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Fav Person 🕷️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Spider Web -->
+    <div class="web web-1">╲╱</div>
+    <div class="web web-2">╱╲</div>
+
+    <!-- Music -->
+    <audio id="birthdayMusic" loop>
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Button -->
+    <button class="music-btn" id="musicBtn">
+        ♫
+    </button>
+
+
+    <!-- =========================
+         CARD
+    ========================== -->
+
+    <main class="card-container">
+
+        <div class="birthday-card" id="birthdayCard">
+
+
+            <!-- =========================
+                 PAGE 1 — COVER
+            ========================== -->
+
+            <section class="card-page active" id="page1">
+
+                <div class="spider-symbol">🕷️</div>
+
+                <p class="small-text">A LITTLE SOMETHING FOR</p>
+
+                <h1>
+                    MY FAV<br>
+                    PERSON
+                </h1>
+
+                <div class="line"></div>
+
+                <p class="to-text">to: <span>myfavperson</span></p>
+                <p class="from-text">from: maisarakiutt</p>
+
+                <p class="date">18 / 9</p>
+
+                <button class="main-btn next-btn">
+                    OPEN CARD
+                    <span>→</span>
+                </button>
+
+            </section>
+
+
+
+            <!-- =========================
+                 PAGE 2 — CAKE
+            ========================== -->
+
+            <section class="card-page" id="page2">
+
+                <p class="page-label">01 — MAKE A WISH</p>
+
+                <div class="cake-area">
+
+                    <div class="cake">
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+
+                        <div class="icing"></div>
+
+                        <div class="cake-top"></div>
+
+                        <div class="cake-body">
+                            <div class="cake-line"></div>
+                            <div class="cake-line"></div>
+                        </div>
+
+                        <div class="cake-plate"></div>
+                    </div>
+
+                </div>
+
+                <h2>make a wish...</h2>
+
+                <p class="soft-text">
+                    close your eyes,<br>
+                    make a little wish 🤍
+                </p>
+
+                <button class="main-btn next-btn">
+                    NEXT
+                    <span>→</span>
+                </button>
+
+            </section>
+
+
+
+           <!-- =========================
+     PAGE 3 — THREE PHOTOS
+========================= -->
+
+<section class="card-page" id="page3">
+
+    <p class="page-label">02 — MY FAV BOY</p>
+
+    <div class="three-photos">
+
+        <div class="polaroid photo-one">
+            <img src="img1.jpeg" alt="Photo 1">
+            <span>fav 🤍</span>
+        </div>
+
+        <div class="polaroid photo-two">
+            <img src="img2.jpeg" alt="Photo 2">
+            <span>my boyy</span>
+        </div>
+
+        <div class="polaroid photo-three">
+            <img src="img3.jpeg" alt="Photo 3">
+            <span>18/9 🕷️</span>
+        </div>
+
+    </div>
+
+    <p class="photo-caption">
+        wish: bedayyy myy favv boyy 🤍
+    </p>
+
+    <button class="main-btn next-btn">
+        NEXT
+        <span>→</span>
+    </button>
+
+</section>
+
+
+            <!-- =========================
+                 PAGE 4 — WISH
+            ========================== -->
+
+            <section class="card-page" id="page4">
+
+                <p class="page-label">03 — A LITTLE WISH</p>
+
+                <div class="wish-box">
+
+                    <div class="quote-mark">“</div>
+
+                    <p id="wishText"></p>
+
+                </div>
+
+                <button class="main-btn next-btn" id="wishNext">
+                    ONE LAST THING
+                    <span>→</span>
+                </button>
+
+            </section>
+
+
+
+            <!-- =========================
+     PAGE 5 — FINAL LETTER
+========================= -->
+
+<section class="card-page" id="page5">
+
+    <p class="page-label">04 — ONE LAST MESSAGE</p>
+
+    <h2 class="last-title">
+        there's one last thing<br>
+        i want you to read...
+    </h2>
+
+    <div class="final-envelope" id="envelope">
+
+        <!-- LETTER -->
+        <div class="final-letter">
+
+            <div class="letter-inner">
+
+                <p class="letter-to">for my fav person,</p>
+
+                <p class="letter-message" id="letterMessage"></p>
+
+                <p class="letter-signature" id="letterSignature"></p>
+
+            </div>
+
+        </div>
+
+        <!-- ENVELOPE -->
+        <div class="envelope-body"></div>
+
+        <div class="envelope-flap"></div>
+
+        <div class="spider-seal">
+            🕷️
+        </div>
+
+    </div>
+
+    <p class="envelope-hint" id="clickText">
+        click the envelope
+    </p>
+
+    <button class="restart-btn" id="restartBtn">
+        ↻ read again
+    </button>
+
+</section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Bottom text -->
+    <div class="bottom-web-text">
+        made with a little bit of love 🕷️
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
